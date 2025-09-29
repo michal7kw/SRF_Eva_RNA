@@ -1,0 +1,12 @@
+Differential Expression Analysis Summary
+========================================
+Analysis date: 2025-09-29 10:08:52.825064 
+Comparison: TES vs GFP
+Significance threshold: padj < 0.05
+
+Total genes in count matrix: 62700
+Genes after filtering (counts >= 10): 33968
+Genes with valid p-values: 33968
+Significantly upregulated in TES: 6313
+Significantly downregulated in TES: 6057
+Total significantly changed genes: 12370
