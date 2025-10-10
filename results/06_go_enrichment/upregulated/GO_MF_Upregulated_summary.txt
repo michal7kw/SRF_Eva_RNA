@@ -1,0 +1,15 @@
+GO MF Enrichment Summary - Upregulated Genes
+===================================================
+Significant terms found: 1 
+P-value cutoff: 0.05
+Q-value cutoff: 0.2
+
+Top 10 enriched terms:
+                   ID                         Description GeneRatio  BgRatio
+GO:0004930 GO:0004930 G protein-coupled receptor activity  108/4014 160/7822
+           RichFactor FoldEnrichment   zScore      pvalue   p.adjust    qvalue
+GO:0004930      0.675       1.315359 4.137759 2.04987e-05 0.01600949 0.0154927
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    geneID
+GO:0004930 CCR4/P2RY6/ADRA1D/PAX8/SIGMAR1/RORB/OPN3/GPR160/FZD5/FZD4/HTR6/GPR35/ADGRG7/OR2B2/OR2B6/CELSR1/OR2W6P/ADRB2/FZD7/F2R/ADGRG3/NPFFR1/PDGFRB/KCTD16/GPRC5C/OPN5/F2RL1/GPR101/S1PR1/ADGRL3/SPHK1/VIPR2/GPR162/CELSR3/ADRB1/GPR142/OPRL1/OR2A7/TM2D1/CCR7/TAS1R1/ADGRL1/MRGPRE/GPR153/ADRA1B/C3AR1/GHSR/CCR1/MC1R/OXTR/GPR4/GPR182/SSTR3/ADGRL2/HRH1/OR2J3/GPR75/ACKR4/OR2A1/OR2A42/LPAR3/CHRM4/SPHK2/NMUR2/GPR52/GALR2/ADGRA3/P2RY2/HPGD/GPR25/FZD9/OR1L8/GPRC5B/TAS1R3/ADORA2B/OR2J2/OR52I2/ELOVL4/P2RY4/HCRTR1/FZD2/OR5C1/HRH3/FPR1/TPRA1/OR1L4/OR14J1/VN1R1/OR2J1/TAS2R39/ADGRB1/ADGRD1/NTSR1/SUCNR1/OR1L6/CHRM2/SLC39A9/MRGPRD/OR11H4/NPY2R/OR1K1/P2RY1/LPAR5/GHRHR/CMKLR1/ADORA1/OR51M1/GPR150
+           Count
+GO:0004930   108

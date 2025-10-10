@@ -1,0 +1,19 @@
+GO CC Enrichment Summary - Upregulated Genes
+===================================================
+Significant terms found: 2 
+P-value cutoff: 0.05
+Q-value cutoff: 0.2
+
+Top 10 enriched terms:
+                   ID            Description GeneRatio  BgRatio RichFactor
+GO:0005770 GO:0005770          late endosome  107/4083 153/7933  0.6993464
+GO:0031902 GO:0031902 late endosome membrane   62/4083  85/7933  0.7294118
+           FoldEnrichment   zScore       pvalue    p.adjust      qvalue
+GO:0005770       1.358784 4.614659 2.128438e-06 0.001079118 0.001026131
+GO:0031902       1.417199 3.982208 3.983586e-05 0.010098390 0.009602539
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  geneID
+GO:0005770 NPC1/CDIP1/LAPTM4B/IRGM/TMEM163/CTSS/MCOLN2/BST2/GRIN2B/MON1A/MCOLN1/ANXA6/VPS39/SFTPB/MMD/F2R/ATP7B/CHMP7/ATP7A/INSR/VAC14/VAMP8/MARCHF8/OSBPL11/VTI1A/CTNS/SNX16/ZFYVE26/RMC1/WDR81/WDR48/TMEM59/AP5Z1/KIDINS220/ANKRD13B/MTMR4/RNF149/CLCN3/VPS8/ARL8B/BAIAP3/MCOLN3/TMEM230/STARD3/ATP13A2/ARL8A/YIPF1/SLC30A3/VPS16/LAMP3/LDLR/NTRK1/HLA-DMA/CLEC16A/DERL1/VPS36/IL12A/PLD3/LAMTOR1/FYCO1/CHMP3/CD74/CHMP1A/UVRAG/GRN/IGF2R/LAMP1/SLC38A9/KCMF1/ATP13A5/SIGLEC1/TMEM25/SDF4/SLC9A9/ASTN2/MON1B/M6PR/LRAT/LGMN/SLC2A4/LAMTOR4/ZP2/RAB7A/MR1/TSG101/FIG4/GALNTL5/NSG2/RNF148/AP1AR/SRC/VPS11/ENTREP1/TPCN2/B2M/VPS37D/RAB27A/BACE1/RILP/ABHD6/ZMPSTE24/LITAF/SLC9A6/STX8/CHID1/YIPF2/CD2AP
+GO:0031902                                                                                                                                                                                                                                                                               NPC1/CDIP1/LAPTM4B/IRGM/TMEM163/MCOLN2/MCOLN1/ANXA6/VPS39/MMD/CHMP7/VAC14/VAMP8/MARCHF8/OSBPL11/VTI1A/SNX16/RMC1/WDR81/TMEM59/MTMR4/CLCN3/ARL8B/BAIAP3/MCOLN3/STARD3/ATP13A2/ARL8A/YIPF1/SLC30A3/VPS16/LAMP3/NTRK1/HLA-DMA/VPS36/PLD3/LAMTOR1/CHMP3/CHMP1A/LAMP1/SLC38A9/ATP13A5/SLC9A9/LAMTOR4/RAB7A/MR1/TSG101/FIG4/GALNTL5/NSG2/VPS11/ENTREP1/TPCN2/B2M/VPS37D/RAB27A/RILP/ABHD6/ZMPSTE24/LITAF/SLC9A6/YIPF2
+           Count
+GO:0005770   107
+GO:0031902    62
