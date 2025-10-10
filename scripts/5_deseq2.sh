@@ -86,6 +86,7 @@ library(RColorBrewer)
 library(dplyr)
 library(tibble)
 library(ggrepel)
+library(org.Hs.eg.db)
 
 # Try to load EnhancedVolcano (optional)
 if (!require(EnhancedVolcano, quietly = TRUE)) {
@@ -191,7 +192,24 @@ cat("\n4. Saving results...\n")
 # Convert results to data frame and add gene names
 res_df <- as.data.frame(res)
 res_df$gene_id <- rownames(res_df)
-res_df <- res_df[, c("gene_id", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj")]
+
+# Map Ensembl IDs to gene symbols
+cat("Mapping Ensembl IDs to gene symbols...\n")
+# Remove version numbers from Ensembl IDs for mapping
+ensembl_ids_clean <- gsub("\\..*", "", res_df$gene_id)
+
+# Get gene symbols
+gene_symbols <- mapIds(org.Hs.eg.db,
+                      keys = ensembl_ids_clean,
+                      column = "SYMBOL",
+                      keytype = "ENSEMBL",
+                      multiVals = "first")
+
+# Add gene symbols to results, use gene_id if symbol not found
+res_df$gene_symbol <- ifelse(!is.na(gene_symbols), gene_symbols, res_df$gene_id)
+
+# Reorder columns to include gene_symbol
+res_df <- res_df[, c("gene_id", "gene_symbol", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj")]
 
 # Save results
 write.table(res_df, "deseq2_results_TES_vs_GFP.txt",
@@ -250,8 +268,12 @@ dev.off()
 
 # Volcano plot using EnhancedVolcano
 if ("EnhancedVolcano" %in% rownames(installed.packages())) {
+    # Get top 20 gene symbols for labeling
+    top_genes_idx <- head(order(res_df$padj), 20)
+    top_gene_symbols <- res_df$gene_symbol[top_genes_idx]
+
     p_volcano <- EnhancedVolcano(res_df,
-                                lab = res_df$gene_id,
+                                lab = res_df$gene_symbol,
                                 x = 'log2FoldChange',
                                 y = 'padj',
                                 title = 'Volcano Plot: TES vs GFP',
@@ -260,7 +282,7 @@ if ("EnhancedVolcano" %in% rownames(installed.packages())) {
                                 FCcutoff = 1.0,
                                 pointSize = 2.0,
                                 labSize = 3.0,
-                                selectLab = head(rownames(res[order(res$padj), ]), 20),
+                                selectLab = top_gene_symbols,
                                 drawConnectors = TRUE,
                                 widthConnectors = 0.5)
 
@@ -270,6 +292,17 @@ if ("EnhancedVolcano" %in% rownames(installed.packages())) {
 # Heatmap of top differentially expressed genes
 top_genes <- head(rownames(res[order(res$padj), ]), 50)
 top_counts <- assay(vsd)[top_genes, ]
+
+# Map row names to gene symbols for the heatmap
+top_genes_clean <- gsub("\\..*", "", top_genes)
+top_gene_symbols <- mapIds(org.Hs.eg.db,
+                           keys = top_genes_clean,
+                           column = "SYMBOL",
+                           keytype = "ENSEMBL",
+                           multiVals = "first")
+
+# Use gene symbols as row names, fall back to Ensembl ID if not found
+rownames(top_counts) <- ifelse(!is.na(top_gene_symbols), top_gene_symbols, top_genes)
 
 png("plots/top_genes_heatmap.png", width = 10, height = 12, units = "in", res = 300)
 pheatmap(top_counts,

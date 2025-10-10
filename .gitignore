@@ -2,8 +2,8 @@
 *.md
 
 # ...but keep any README.md (in root or subfolders)
-!README.md
-!**/README.md
+# !README.md
+# !**/README.md
 
 *.bam
 *.tab
@@ -17,3 +17,4 @@ scratch/
 
 Archive/
 Legacy/
+
