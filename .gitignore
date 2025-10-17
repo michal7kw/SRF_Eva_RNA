@@ -18,3 +18,9 @@ scratch/
 Archive/
 Legacy/
 
+# Ignore all Markdown files
+*.md
+
+# ...but keep any README.md (in root or subfolders)
+# !README.md
+# !**/README.md
